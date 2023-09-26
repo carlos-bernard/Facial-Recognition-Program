@@ -11,11 +11,11 @@ from collections import Counter
 """
 A python program that makes use of the pre-existing face_recognition library (by Adam Geitgey) to allow the user to 
 train the program to recognize
-faces and then identify who those faces belong to in any other image. The program is run using a command line interface
-and draws a relevantly named bounding box around each face it finds that it has trained on and then renames the image
-used to contain the names of the people contained within.
-The facial recognition is achieved by taking a series of measurement (encodings) on faces in the training image and then
-comparing those measurements with the measurements taken from images with unknown faces
+faces and then identify who those faces belong to in any image. The program is run using a command line interface or a 
+simple GUI and draws a relevantly named bounding box around each face it finds that it has trained on and then 
+renames the image to contain the names of the people contained within.
+The facial recognition is achieved by taking a series of measurement (encodings) on faces in the training images and 
+then comparing those measurements with the measurements taken from images with unknown faces
 """
 
 DEFAULT_ENCODINGS_PATH = Path("output/encodings.pkl")
@@ -134,7 +134,7 @@ def validate(model: str = "hog"):
 
 if __name__ == "__main__":
     if args.train:
-        train.encode_known_faces()
+        train_identifier.encode_known_faces()
     if args.validate:
         validate()
     if args.identify:

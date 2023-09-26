@@ -75,7 +75,7 @@ def valid_btn_press(event):
 
 
 def train_btn_press(event):
-    train.encode_known_faces()
+    train_identifier.encode_known_faces()
 
 
 def identify_btn_press(event):
